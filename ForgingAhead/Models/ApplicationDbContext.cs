@@ -8,6 +8,5 @@ namespace ForgingAhead.Models
         public DbSet<Character> Characters { get; set; }
         public DbSet<Equipment> Equipment { get; set; }
         public DbSet<Quest> Quests { get; set; }
-
     }
 }

@@ -25,6 +25,7 @@ namespace ForgingAhead.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Title"] = "Equipment";
             var model = _context.Equipment.ToList();
             return View(model);
         }
@@ -57,6 +58,13 @@ namespace ForgingAhead.Controllers
                 _context.SaveChanges();
             }
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(string name)
+        {
+            ViewData["Title"] = "Edit" + name;
+            var model = _context.Equipment.FirstOrDefault(e => e.Name == name);
+            return View(model);
         }
     }
 }
